@@ -1,0 +1,5 @@
+<RCC>
+    <qresource>
+        <file alias="clutch">icons/256x256/harbour-clutch.png</file>
+    </qresource>
+</RCC>
