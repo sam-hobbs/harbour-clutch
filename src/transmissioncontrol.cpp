@@ -28,6 +28,7 @@ along with Clutch.  If not, see <http://www.gnu.org/licenses/>
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonParseError>
+#include <QStringList>
 
 TransmissionControl::TransmissionControl() {
 
@@ -53,19 +54,42 @@ TransmissionControl::TransmissionControl() {
         qDebug() << "File " << tmp.fileName() << " has been parsed without error.";
     }
 
-    transmission = new QProcess;
+    transmission = new QProcess(this);
+    transmission->start("/usr/bin/transmission-daemon",QStringList() << "-f"); // transmission must be run in foreground mode (-f flag) or it cannot be killed by qprocess
+    if (!transmission->waitForStarted())
+        qWarning() << "Transmission failed to start";
+
+
 }
+
+
 
 TransmissionControl::~TransmissionControl() {
+    qDebug() << "Destroying TransmissionControl object";
+
+    // stop the transmission process when the app stops
+    transmission->terminate(); // send SIGTERM
+    // code below is probably unnecessary now, running transmission-daemon in foreground mode allows it to be terminated cleanly
+    if (!transmission->waitForFinished()) {
+        qWarning() << "couldn't kill process, sending SIGKILL";
+        transmission->kill(); // send SIGKILL
+        if (!transmission->waitForFinished()) {
+            qCritical() << "still couldn't kill process. Transmission may still be running!";
+        }
+    }
 
 }
+
+
 
 bool TransmissionControl::isTransmissionRunning() {
     return 1;
 }
 
-void TransmissionControl::setTransmissionRunning(bool state) {
 
+
+void TransmissionControl::setTransmissionRunning(bool state) {
+    qDebug() << state;
 }
 
 

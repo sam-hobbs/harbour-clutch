@@ -75,21 +75,27 @@ Page {
 
         // enable file picker, from WebPirate
         experimental.filePicker: Item {
-                Component.onCompleted: {
-                    if(pageStack.busy)
-                        pageStack.completeAnimation();
+            Component.onCompleted: {
+                if(pageStack.busy)
+                    pageStack.completeAnimation();
 
-                    var page = pageStack.push(Qt.resolvedUrl("FilePicker.qml"));
+                var page = pageStack.push(Qt.resolvedUrl("FilePicker.qml"));
 
-                    page.actionCompleted.connect(function(action, data) {
-                        model.accept(data.toString().substring(7)); // Strip "file://"
-                    });
+                page.actionCompleted.connect(function(action, data) {
+                    model.accept(data.toString().substring(7)); // Strip "file://"
+                });
 
-                    page.rejected.connect(function() {
-                        model.reject();
-                    });
-                }
+                page.rejected.connect(function() {
+                    model.reject();
+                });
             }
+        }
+
+        // fixes for content width, thanks to Dax
+        experimental.preferredMinimumContentsWidth: 980
+
+        experimental.userScripts: [Qt.resolvedUrl("../js/PixelRatioHandler.js")];
+
     }
 
     // if the page is loading, busy=1 and the overlay is shown

@@ -28,8 +28,11 @@ OTHER_FILES += qml/harbour-clutch.qml \
     qml/cover/CoverPage.qml \
     qml/pages/AboutPage.qml \
     qml/pages/SettingsPage.qml \
+    qml/pages/WebRemote.qml \
+    qml/pages/FilePicker.qml \
     rpm/harbour-clutch.spec \
     rpm/harbour-clutch.yaml \
+    rpm/harbour-clutch.changes \
     translations/*.ts \
     harbour-clutch.desktop
 
@@ -45,11 +48,9 @@ CONFIG += sailfishapp_i18n
 # modify the localized app name in the the .desktop file.
 #TRANSLATIONS += translations/harbour-clutch-de.ts
 
-#DISTFILES +=
+DISTFILES += qml/js/PixelRatioHandler.js
+
 
 RESOURCES += harbour-clutch.qrc
 
-DISTFILES += \
-    rpm/harbour-clutch.changes \
-    qml/pages/WebRemote.qml \
-    qml/pages/FilePicker.qml
+DISTFILES +=
