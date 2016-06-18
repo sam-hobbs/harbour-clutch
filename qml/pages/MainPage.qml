@@ -41,7 +41,7 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
             }
             MenuItem {
-                text: qsTr("Remote")
+                text: qsTr("Web UI")
                 onClicked: pageStack.push(Qt.resolvedUrl("WebRemote.qml"))
             }
         }
@@ -54,26 +54,45 @@ Page {
         IconButton {
             id:button
 
+            anchors.centerIn: parent
+
+            width: parent.width
+            height: width
+
+            icon.source: ( transmission.leverOn ) ? "qrc:///lever_on" : "qrc:///lever_off"
+
+            icon.width: ( parent.width < parent.height ) ? parent.width * 0.8 : parent.height * 0.8
+            icon.height: icon.width
+
+            icon.fillMode: Image.PreserveAspectFit
+
+            onClicked:
+            {
+                console.log("Lever icon clicked!")
+                // if transmission is on, turn it off and vice versa
+                transmission.setTransmissionRunning(!transmission.leverOn)
+            }
+        }
+
+        Item {
+            width: 1
+            height: Theme.paddingLarge
+        }
+
+        Label {
+            id: stateLabel
+
             anchors {
-                top: header.bottom
+                top: button.bottom
                 bottom: parent.bottom
                 left: parent.left
                 right: parent.right
             }
 
             width: parent.width
+            horizontalAlignment: Text.AlignHCenter
 
-            icon.source: "qrc:///clutch"
-
-            icon.width: parent.width * 0.8
-            icon.height: parent.height - header.height
-            icon.fillMode: Image.PreserveAspectFit
-
-            onClicked:
-            {
-                console.log("clicked!")
-                led.toggleState()
-            }
+            text: ( transmission.leverOn ) ? "Transmission daemon running" : "Transmission daemon stopped"
         }
     }
 }

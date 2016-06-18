@@ -73,7 +73,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Remote</source>
+        <source>Web UI</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

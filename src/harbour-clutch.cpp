@@ -28,6 +28,7 @@ along with Clutch.  If not, see <http://www.gnu.org/licenses/>
 
 #include "transmissioncontrol.h"
 #include "filesmodel.h"
+#include "settings.h"
 
 int main(int argc, char *argv[])
 {
@@ -36,6 +37,7 @@ int main(int argc, char *argv[])
     QScopedPointer<QQuickView> v(SailfishApp::createView());
 
     qmlRegisterType<TransmissionControl>("harbour.clutch.transmissioncontrol", 0, 1, "TransmissionControl");
+    qmlRegisterType<AppSettings>("harbour.clutch.settings", 0, 1, "AppSettings");
 
     FilesModel::registerMetaTypes();
     qmlRegisterType<FilesModel>("harbour.clutch.selectors", 1, 0, "FilesModel");

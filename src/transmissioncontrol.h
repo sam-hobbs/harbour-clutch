@@ -34,6 +34,8 @@ along with Clutch.  If not, see <http://www.gnu.org/licenses/>
 #include <QJsonDocument>
 #include <QProcess>
 
+#include "settings.h"
+
 class TransmissionControl : public QObject
 {
     Q_OBJECT
@@ -43,20 +45,31 @@ public:
     ~TransmissionControl();
 
     // property for allowing QML to read/write/track whether transmission is running
-    Q_PROPERTY(bool transmissionState READ isTransmissionRunning WRITE setTransmissionRunning NOTIFY transmissionStateChanged);
+    Q_PROPERTY(bool leverOn READ isTransmissionOn WRITE setTransmissionRunning NOTIFY transmissionStateChanged)
+    Q_PROPERTY(AppSettings* appSettings READ getAppSettings WRITE setAppSettings NOTIFY appSettingsChanged)
 
 public slots:
     // methods for reading/writing transmission state
-    Q_INVOKABLE bool isTransmissionRunning(); // transmissionState read
-    void setTransmissionRunning(bool); // transmissionState write
+    Q_INVOKABLE bool isTransmissionOn(); // leverOn read
+    void setTransmissionRunning(bool); // leverOn write
+    void updateTransmissionState(QProcess::ProcessState);
+
+    // methods for reading/writing app settings object
+    Q_INVOKABLE AppSettings* getAppSettings(); // appSettings read
+    void setAppSettings(AppSettings* settings); // appSettings write
 
 signals:
-    void transmissionStateChanged(bool); // transmissionState notify
+    void transmissionStateChanged(); // leverOn notify
+    void appSettingsChanged(); // appSettings notify
 
 private:
+    void startTransmission();
+    void stopTransmission();
 
     QJsonDocument *transmissionSettings;
+    AppSettings *appSettings;
     QProcess *transmission;
+    bool transmissionOn;
 
 };
 

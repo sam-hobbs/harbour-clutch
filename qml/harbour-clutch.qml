@@ -25,6 +25,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "pages"
 import harbour.clutch.transmissioncontrol 0.1
+import harbour.clutch.settings 0.1
 
 ApplicationWindow
 {
@@ -36,8 +37,15 @@ ApplicationWindow
     // class defined in transmissioncontrol.h for interacting with transmission process
     TransmissionControl {
         id: transmission
-        transmissionState: transmission.isTransmissionRunning()
+        leverOn: transmission.isTransmissionOn()
+
+        // app settings is stored as a member object of transmission control
+        // http://developer.ubuntu.com/api/qml/sdk-14.10/QtQml.qtqml-cppintegration-exposecppattributes/
+        appSettings: AppSettings {
+
+        }
+
+        //appSettings: transmission.getAppSettings()
     }
+
 }
-
-

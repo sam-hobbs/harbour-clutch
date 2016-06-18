@@ -56,6 +56,27 @@ Page {
             anchors.leftMargin: Theme.paddingMedium
             anchors.rightMargin: Theme.paddingMedium
 
+            SectionHeader { text: "Clutch Settings" }
+
+            TextSwitch {
+                text: "Start Transmission Automatically"
+
+                checked: transmission.appSettings.autoStartDaemon;
+                onCheckedChanged: {
+                    transmission.appSettings.autoStartDaemon = checked;
+                }
+            }
+
+            TextSwitch {
+                text: "Open web remote when daemon starts"
+
+                checked: transmission.appSettings.autoOpenWebUI;
+                onCheckedChanged: {
+                    transmission.appSettings.autoOpenWebUI = checked;
+                }
+            }
+
+            SectionHeader { text: "Transmission Daemon Settings" }
 
             Label {
                 width: parent.width

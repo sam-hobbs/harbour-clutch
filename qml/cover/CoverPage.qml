@@ -31,7 +31,7 @@ Cover {
 
     Image {
         id: coverIcon
-        source: "qrc:///clutch"
+        source: ( transmission.leverOn ) ? "qrc:///lever_on" : "qrc:///lever_off"
 
         fillMode: Image.PreserveAspectFit
         cache: true
@@ -56,11 +56,12 @@ Cover {
         id: coverAction
 
         CoverAction {
-            iconSource: "image://theme/icon-m-dot"
+            iconSource: ( transmission.leverOn ) ? "image://theme/icon-cover-pause" : "image://theme/icon-cover-play"
 
             onTriggered:
             {
                 console.log("cover action clicked!")
+                transmission.setTransmissionRunning(!transmission.leverOn)
             }
 
         }

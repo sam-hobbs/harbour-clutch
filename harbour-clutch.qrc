@@ -1,5 +1,7 @@
 <RCC>
     <qresource>
         <file alias="clutch">icons/256x256/harbour-clutch.png</file>
+	<file alias="lever_on">transmission_icon_on_256x256.png</file>
+	<file alias="lever_off">transmission_icon_off_256x256.png</file>
     </qresource>
 </RCC>

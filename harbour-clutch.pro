@@ -12,16 +12,18 @@
 # The name of your application
 TARGET = harbour-clutch
 
-CONFIG += sailfishapp
+CONFIG += sailfishapp c++11
 
 SOURCES += src/harbour-clutch.cpp \
     src/transmissioncontrol.cpp \
     src/filesmodel.cpp \
-    src/filesmodelworker.cpp
+    src/filesmodelworker.cpp \
+    src/settings.cpp
 
 HEADERS += src/transmissioncontrol.h \
     src/filesmodel.h \
-    src/filesmodelworker.h
+    src/filesmodelworker.h \
+    src/settings.h
 
 OTHER_FILES += qml/harbour-clutch.qml \
     qml/pages/MainPage.qml \
