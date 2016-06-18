@@ -22,10 +22,11 @@ along with Clutch.  If not, see <http://www.gnu.org/licenses/>
 */
 
 import QtQuick 2.0
+import QtWebKit 3.0
 import Sailfish.Silica 1.0
 
 Page {
-    objectName: "WebRemote"
+    id: webRemote
     PageHeader {
         id: header
         title: qsTr("Transmission Web UI")
@@ -41,13 +42,29 @@ Page {
     SilicaWebView {
         id: webView
 
-        //anchors.fill: parent
         anchors {
             top: padding.bottom
             left: parent.left
             right: parent.right
             bottom: parent.bottom
         }
+
+        // fixes for content width, thanks to Dax for helping me figure this out!
+
+        // this works, but the content is offset to the left when the "open" button is pressed - clunky
+        //property variant devicePixelRatio: {//1.5
+        //    if (Screen.width <= 540) return 1.5;
+        //    else if (Screen.width > 540 && Screen.width <= 768) return 2.0;
+        //    else if (Screen.width > 768) return 3.0;
+        //}
+        //experimental.customLayoutWidth: webRemote.width / devicePixelRatio
+
+        // this works much better
+        experimental.preferences.javascriptEnabled: true
+        experimental.preferredMinimumContentsWidth: 980
+        experimental.userScripts: [Qt.resolvedUrl("../js/PixelRatioHandler.js")];
+
+
 
         // used to decide whether to show busy overlay (if loading, busy=1)
         onLoadingChanged: {
@@ -91,11 +108,6 @@ Page {
             }
         }
 
-        // fixes for content width, thanks to Dax
-        experimental.preferredMinimumContentsWidth: 980
-
-        experimental.userScripts: [Qt.resolvedUrl("../js/PixelRatioHandler.js")];
-
     }
 
     // if the page is loading, busy=1 and the overlay is shown
@@ -106,7 +118,7 @@ Page {
         color: "black"
         opacity: 0.5
     }
-
+    // spinning circle centred in the overlay
     BusyIndicator {
         anchors.centerIn: overlay
         running: overlay.visible
