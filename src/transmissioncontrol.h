@@ -69,7 +69,7 @@ private:
     QJsonDocument *transmissionSettings;
     AppSettings *appSettings;
     QProcess *transmission;
-    bool transmissionOn;
+    bool transmissionOn = 0;
 
 };
 
