@@ -31,7 +31,7 @@ AppSettings::AppSettings(QObject *parent) :
 {
     qDebug() << "Initialising AppSettings object";
     m_autoStartDaemon = m_settings->value("autoStartDaemon", false).toBool();
-    m_autoOpenWebUI = m_settings->value("autoOpenWebUI", false).toBool();
+    m_autoOpenWebUI = m_settings->value("autoOpenWebUI", true).toBool();
 }
 
 
