@@ -44,8 +44,23 @@ ApplicationWindow
         appSettings: AppSettings {
 
         }
+    }
 
-        //appSettings: transmission.getAppSettings()
+    // when transmission is turned on, push Web UI page
+    // doesn't work when the app is started, because transmission is started in the constructor, before the signals & slots are connected
+    Connections {
+        target: transmission
+        onTransmissionStateChanged: {
+            if ( transmission.appSettings.autoOpenWebUI ) {
+                if ( transmission.leverOn) {
+                    if (pageStack.currentPage.id === "webRemote") {
+                        pageStack.currentPage.refresh();
+                    } else {
+                        pageStack.push(Qt.resolvedUrl("pages/WebRemote.qml"));
+                    }
+                }
+            }
+        }
     }
 
 }

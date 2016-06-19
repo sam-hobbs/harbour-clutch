@@ -134,8 +134,11 @@ void TransmissionControl::startTransmission() {
     } else  if (state == QProcess::NotRunning) {
         qDebug() << "Transmission is not running. Starting...";
         transmission->start();
-        if (!transmission->waitForStarted())
+        if (!transmission->waitForStarted()) {
             qWarning() << "Transmission failed to start";
+        } else {
+
+        }
     }
 }
 
