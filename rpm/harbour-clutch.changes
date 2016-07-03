@@ -5,6 +5,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Jul 2 2016 Sam Hobbs <sam@samhobbs.co.uk> 0.2
+- Fixed "open web remote when daemon starts" when used with "start transmission automatically"
+
 * Sun Jun 19 2016 Sam Hobbs <sam@samhobbs.co.uk> 0.1
 - First release
 

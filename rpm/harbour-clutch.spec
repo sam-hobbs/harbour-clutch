@@ -12,8 +12,8 @@ Name:       harbour-clutch
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
-Summary:    My SailfishOS Application
-Version:    0.1
+Summary:    Silica frontend for Transmission (BitTorrent client)
+Version:    0.2
 Release:    1
 Group:      Qt/Qt
 License:    GPLv2+

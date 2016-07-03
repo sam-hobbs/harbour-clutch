@@ -95,6 +95,28 @@ Page {
             text: ( transmission.leverOn ) ? "Transmission daemon running" : "Transmission daemon stopped"
         }
     }
+
+    // if this is the first time the page has been loaded and transmission is already running, push the webremote page
+    property bool firstLoad: true
+
+    onStatusChanged: {
+        if (status == PageStatus.Active && firstLoad) {
+            firstLoad = false
+            if ( transmission.appSettings.autoOpenWebUI ) {
+                if ( transmission.leverOn) {
+                    pageStack.push(Qt.resolvedUrl("WebRemote.qml"));
+                }
+            }
+        }
+    }
+
+//    Component.onCompleted: {
+//        if ( transmission.appSettings.autoOpenWebUI ) {
+//            if ( transmission.leverOn) {
+//                pageStack.push(Qt.resolvedUrl("pages/WebRemote.qml"));
+//            }
+//        }
+//    }
 }
 
 

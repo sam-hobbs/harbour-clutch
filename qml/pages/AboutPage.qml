@@ -153,7 +153,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.secondaryColor
                 font.pixelSize: Theme.fontSizeTiny
-                text: "v0.1"
+                text: "v0.2"
             }
         }
 
