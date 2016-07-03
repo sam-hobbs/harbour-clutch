@@ -9,12 +9,11 @@ A few modifications have been made to the Silica WebView to improve the Transmis
 * WebView starts lower down the page to prevent accidentally pressing the "back" dot on the page when clicking open file.
 
 Since Clutch launches transmission in the background, transmission is a dependency of Clutch.
-At the moment, the best place to get Transmission is from [NeilDK's repository on OpenRepos](https://openrepos.net/content/nieldk/transmission). In future I plan on building a new version of Transmission and uploading both Clutch and Transmission to [my repository on OpenRepos](https://openrepos.net/user/5451/repository).
+A minimal build of Transmission (and libevent2, a dependency of transmission) are available in [my repository on OpenRepos](https://openrepos.net/user/5451/repository), and should be automatically installed if you install Clutch using [Warehouse](https://openrepos.net/content/basil/warehouse-sailfishos).
 
 # Development Priorities
 Some development priorities, in order, are:
 * Implement a model for the Transmission daemon settings stored in settings.json, and expose the settings in the settings page.
-* Build a new, barebones version of Tranmission without Transmission-Qt and upload it to OpenRepos
 * Start writing a proper Silica frontend that uses Transmission directly without calling it as a separate process (probably required before application can be uploaded to Jolla Harbour)
 
 Contributions welcome.
