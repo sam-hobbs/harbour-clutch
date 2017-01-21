@@ -5,94 +5,94 @@
     <name>AboutPage</name>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licensia</translation>
     </message>
     <message>
         <source>About Clutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Acerca de Clutch</translation>
     </message>
     <message>
         <source>A Silica frontend for the Transmission Torrent Client</source>
-        <translation type="unfinished"></translation>
+        <translation>Una interfaz nativa para cliente de torrente transmission</translation>
     </message>
     <message>
-        <source>Both Clutch and Transmission are open source software licensed under the terms of the GNU General Public License v2+ </source>
-        <translation type="unfinished"></translation>
+        <source>Both Clutch and Transmission are open source software licensed under the terms of the GNU General Public License v2+</source>
+        <translation>Ambos clutch y transmission son código fuente libre,bajo GNU licencia publica general v2+</translation>
     </message>
     <message>
         <source>Source (Clutch)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente (Clutch)</translation>
     </message>
     <message>
         <source>Source (Transmission)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente (Transmission) </translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Clutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Embragar</translation>
     </message>
 </context>
 <context>
     <name>FilePicker</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Almacenamiento android</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>Sd card</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Inicio</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviar %1 fichero(s)</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Regresar</translation>
     </message>
 </context>
 <context>
     <name>MainPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuraciones</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Acerca de</translation>
     </message>
     <message>
         <source>Clutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Embragar</translation>
     </message>
     <message>
         <source>Web UI</source>
-        <translation type="unfinished"></translation>
+        <translation>Interfaz web</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuraciones</translation>
     </message>
     <message>
         <source>Not implemented</source>
-        <translation type="unfinished"></translation>
+        <translation>No implementado</translation>
     </message>
 </context>
 <context>
     <name>WebRemote</name>
     <message>
         <source>Transmission Web UI</source>
-        <translation type="unfinished"></translation>
+        <translation>Transmision por interfaz web</translation>
     </message>
 </context>
 </TS>
