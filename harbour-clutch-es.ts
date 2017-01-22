@@ -13,11 +13,11 @@
     </message>
     <message>
         <source>A Silica frontend for the Transmission Torrent Client</source>
-        <translation>Una interfaz nativa para cliente de torrente transmission</translation>
+        <translation>Una interfaz nativa para cliente de torrentes transmission</translation>
     </message>
     <message>
         <source>Both Clutch and Transmission are open source software licensed under the terms of the GNU General Public License v2+</source>
-        <translation>Ambos clutch y transmission son código fuente libre,bajo GNU licencia publica general v2+</translation>
+        <translation>Ambos clutch y transmission son programas código fuente libre,bajo terminos GNU licencia publica general v2+</translation>
     </message>
     <message>
         <source>Source (Clutch)</source>
@@ -32,7 +32,7 @@
     <name>CoverPage</name>
     <message>
         <source>Clutch</source>
-        <translation>Embragar</translation>
+        <translation>Clutch</translation>
     </message>
 </context>
 <context>
@@ -70,7 +70,7 @@
     </message>
     <message>
         <source>Clutch</source>
-        <translation>Embragar</translation>
+        <translation>Clutch</translation>
     </message>
     <message>
         <source>Web UI</source>
@@ -92,7 +92,7 @@
     <name>WebRemote</name>
     <message>
         <source>Transmission Web UI</source>
-        <translation>Transmision por interfaz web</translation>
+        <translation>Transmision interfaz web</translation>
     </message>
 </context>
 </TS>
